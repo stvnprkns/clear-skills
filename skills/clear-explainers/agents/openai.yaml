@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Explainers"
+  short_description: "Sequence complex explanations clearly"
+  default_prompt: "Use $clear-explainers to design or audit this narrative, interactive, or causal explanation."

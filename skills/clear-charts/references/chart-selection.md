@@ -110,6 +110,32 @@ Geographic data does not automatically require a map. Use a map when location, a
 6. **Choose** — Use the simplest form that preserves the needed information.
 7. **Test** — Ask whether the important answer is visible without hover or mental arithmetic.
 
+## Ambiguous selection decisions
+
+### Close values: bars, dots, or a narrowed line domain?
+
+| Choose | When | Reject when |
+| --- | --- | --- |
+| Zero-based bars | magnitude relative to absence is meaningful | the narrow difference is the only task and zero makes it unreadable |
+| Dot plot | close category values need position-based comparison | the filled magnitude from zero is itself meaningful |
+| Narrow-domain line | change or deviation around a stable level is the task, domain is disclosed, and continuity matters | readers may infer the cropped vertical distance as absolute magnitude |
+
+Do not crop a bar baseline to expose close values. Do not force a zero domain on every line or dot chart. If both absolute level and close deviation matter, pair an overview with a focused view or annotate the difference explicitly.
+
+### Thirty categories: reveal structure before reducing count
+
+1. Determine whether the task is full ranking, lookup, distribution, top contributors, or exception handling.
+2. Preserve all categories when individual actionability matters; use a sorted scrollable list or table with stable labels.
+3. Group only by real domain structure. An “Other” bucket is acceptable for composition but not when tail items need action.
+4. Filter when users arrive with a target in mind; do not require serial filtering for comparison.
+5. Replace the chart with a distribution plus labeled exceptions when the question is about typicality, not every category.
+
+### Explain or explore?
+
+Use a persistent annotation when a supported insight must be noticed for the decision. Use exploration when different readers legitimately pursue different questions. A dashboard can do both: the default state establishes the monitoring question and material exception; controls support diagnosis.
+
+Reject annotation that converts a tentative pattern into a conclusion. Reject exploration that makes readers hunt for the basic state of the system.
+
 ## Rethink threshold
 
 Recommend a different representation when at least one is true:

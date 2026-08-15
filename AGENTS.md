@@ -23,7 +23,7 @@ Use progressive disclosure: the skill should know *which* reference to read with
 
 Every durable rule has exactly one owner. Other skills may hand off to the owner but should not maintain copies.
 
-Planned ownership:
+Ownership:
 
 | Skill | Owns |
 | --- | --- |
@@ -113,6 +113,8 @@ Before adding a broad principle:
 2. Add or update an eval case.
 3. Confirm that the proposed rule improves the target behavior without causing obvious regressions in nearby cases.
 4. Prefer one stronger rule over several overlapping reminders.
+
+Keep 20–35% of text cases as restraint cases. Add a rendered `visual/<case>/` fixture with `bad.html`, `expected.png`, and `prompt.md` for rules that depend on visual inspection. Use `scripts/run_evals.py --skill <skill-name>` for repeated baseline/skill samples and blind pairwise judging; smoke tests are infrastructure checks, not evidence that a skill improves behavior.
 
 The goal is not maximum instruction coverage. It is reliable improvement in design judgment.
 

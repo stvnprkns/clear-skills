@@ -1,5 +1,34 @@
 # Scales and Axes
 
+## Decision contract
+
+### Principle
+
+A domain is part of the claim. Judge it by the mark's encoding and the reader's comparison, not by a universal zero rule.
+
+### Use when
+
+- use zero for bars and areas whose length/filled extent encodes magnitude from a baseline;
+- use a narrower line/dot domain when position and change are the task, variation would otherwise disappear, and the domain is explicit;
+- use log scale for multiplicative change across orders of magnitude when zero/negative values are absent and the audience can interpret it;
+- use indexing when relative change from a meaningful common origin is primary.
+
+### Reject when
+
+- a cropped bar makes small differences look like large quantities;
+- domains are tuned independently to manufacture correlation;
+- normalization hides totals that change the decision;
+- a free scale in small multiples invites level comparison;
+- transformation is undisclosed or semantically invalid.
+
+### Prefer instead
+
+Use dot plots for close category values, aligned panels for unlike units, companion totals for normalized composition, and annotated overview/detail rather than an axis break.
+
+### Escape conditions
+
+Keep a narrow sensor/process-control line domain when deviations around tolerance are the operational question. Keep independent panel domains when only shape matters, but label the choice and do not invite magnitude comparison.
+
 Scales are not neutral plumbing. They define the visual relationship between data values and marks.
 
 ## Baseline rules by encoding

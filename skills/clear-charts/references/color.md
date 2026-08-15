@@ -2,6 +2,35 @@
 
 Color is a channel for meaning and attention. Treat it as scarce.
 
+## Decision contract
+
+### Principle
+
+Assign color a declared job: identity, order, divergence, state, uncertainty, or focus. If it has no job, use a neutral treatment.
+
+### Use when
+
+- identity must persist across several coordinated charts;
+- ordered values need a perceptual sequence;
+- a meaningful midpoint supports divergence;
+- one decision-relevant series needs focus while context remains visible.
+
+### Reject when
+
+- hue duplicates labels without improving search;
+- highlighting preselects an answer in an exploratory task;
+- categorical color count exceeds reliable discrimination in the actual size/layout;
+- semantic red/green assigns value judgment not present in the data;
+- “no data” is visually equivalent to zero or the minimum.
+
+### Prefer instead
+
+Use neutral marks plus one focus treatment, direct labels, faceting, ordering, or selection. Pair essential color meaning with another cue.
+
+### Escape conditions
+
+Six colors can be correct when six stable identities recur across coordinated views and users need to track them. A single chart with labeled categories rarely earns the same palette.
+
 ## First question: what job is color doing?
 
 Color may encode:

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Before and after examples showing how Clear improves visual information design.">
+  <title>Clear — Before and after</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to examples</a>
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" aria-label="Clear, back to top">Clear<span>↗</span></a>
+    <nav aria-label="Page sections">
+      <a href="#examples">Examples</a>
+      <a href="#principles">Principles</a>
+      <a href="https://github.com/stvnprkns/clear-skills">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Visual information design skills for agents</p>
+      <h1 id="hero-title">Less effort.<br>More understanding.</h1>
+      <p class="lede">Clear helps agents choose, create, and critique charts, tables, diagrams, dashboards, and explainers—without distorting the information.</p>
+      <div class="hero-note">
+        <span class="note-line" aria-hidden="true"></span>
+        <p>Drag each slider to compare the same data before and after Clear.</p>
+      </div>
+    </section>
+
+    <section class="examples" id="examples" aria-label="Before and after examples">
+      <article class="example" data-example="chart">
+        <header class="example-copy">
+          <div>
+            <p class="example-number">01 / Chart</p>
+            <h2>Make the shortfall visible.</h2>
+          </div>
+          <p>Both charts use the same production data. The redesign links the scrubbed day to exact values, highlights the gap to plan, and labels each line directly.</p>
+        </header>
+
+        <div class="compare" style="--split: 50%">
+          <div class="data-control scrub-control">
+            <label for="chart-scrub">Scrub the project week</label>
+            <output for="chart-scrub" aria-hidden="true">Thu, Feb 12</output>
+            <input id="chart-scrub" type="range" min="0" max="6" value="3" aria-describedby="chart-summary">
+          </div>
+          <div class="compare-stage">
+            <div class="visual visual-after" aria-hidden="true">
+              <div class="chart-shell chart-after">
+                <div class="chart-title-row">
+                  <div><strong>Production tracking</strong><span>Utilization · Week of Feb 9</span></div>
+                  <span class="chart-takeaway" data-production-status>Equipment under target</span>
+                </div>
+                <svg id="after-line-chart" class="line-chart" viewBox="0 0 680 300" role="img" aria-label="Labor, equipment, and expected utilization across a project week. Scrub to inspect each day."></svg>
+                <div class="chart-readout" aria-hidden="true">
+                  <span><i class="labor-dot"></i>Labor <strong data-labor-readout>78%</strong></span>
+                  <span><i class="equipment-dot"></i>Equipment <strong data-equipment-readout>48%</strong></span>
+                  <span><i class="expected-dot"></i>Expected <strong data-expected-readout>82%</strong></span>
+                </div>
+              </div>
+            </div>
+            <div class="visual visual-before" aria-hidden="true">
+              <div class="chart-shell chart-before">
+                <div class="legacy-title">WEEKLY RESOURCE UTILIZATION</div>
+                <div class="legacy-legend"><i></i><span>Labor</span><i></i><span>Equipment</span><i></i><span>Expected</span></div>
+                <svg id="before-line-chart" class="line-chart" viewBox="0 0 680 300" role="img" aria-label="A cluttered multi-line utilization chart with a detached legend and no linked explanation."></svg>
+                <div class="legacy-summary"><strong data-legacy-total>208%</strong><span>Total utilization</span></div>
+              </div>
+            </div>
+            <div class="split-line" aria-hidden="true"><span></span></div>
+            <span class="stage-label before-label">Before</span>
+            <span class="stage-label after-label">After</span>
+          </div>
+          <div class="compare-control">
+            <label for="chart-compare">Compare chart designs</label>
+            <output for="chart-compare" aria-hidden="true">50% before · 50% after</output>
+            <input id="chart-compare" type="range" min="0" max="100" value="50" aria-describedby="chart-summary chart-position">
+            <p id="chart-summary" class="sr-only">At Thu, Feb 12: labor utilization is 78%, equipment utilization is 48%, and expected utilization is 82%. Equipment is 34 percentage points under target.</p>
+            <span id="chart-position" class="sr-only">Move left to reveal more of the redesigned chart. Move right to reveal more of the original chart. Use the project week slider above to inspect each day.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="example" data-example="table">
+        <header class="example-copy">
+          <div>
+            <p class="example-number">02 / Table</p>
+            <h2>Design for the question.</h2>
+          </div>
+          <p>The redesign makes the decision criteria scannable, aligns quantities, and keeps status from depending on color alone.</p>
+        </header>
+
+        <div class="compare" style="--split: 50%">
+          <div class="compare-stage table-stage">
+            <div class="visual visual-after" aria-hidden="true">
+              <div class="table-shell table-after">
+                <div class="table-heading"><div><strong>Vendor comparison</strong><span>Sorted by annual cost</span></div><span>4 shortlisted</span></div>
+                <table>
+                  <thead><tr><th>Vendor</th><th>Annual cost</th><th>Uptime</th><th>Support</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Northstar</strong><small>Enterprise</small></td><td>$48,200</td><td>99.99%</td><td>24 / 7</td><td><span class="status status-ready">✓ Ready</span></td></tr>
+                    <tr><td><strong>Relay</strong><small>Growth</small></td><td>$52,800</td><td>99.95%</td><td>Business hrs</td><td><span class="status status-review">● Review</span></td></tr>
+                    <tr><td><strong>Beacon</strong><small>Enterprise</small></td><td>$57,600</td><td>99.99%</td><td>24 / 7</td><td><span class="status status-ready">✓ Ready</span></td></tr>
+                    <tr><td><strong>Arc</strong><small>Custom</small></td><td>$61,000</td><td>99.90%</td><td>24 / 5</td><td><span class="status status-blocked">! Blocked</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="visual visual-before" aria-hidden="true">
+              <div class="table-shell table-before">
+                <div class="old-heading">VENDOR MASTER COMPARISON — FINAL FINAL</div>
+                <table>
+                  <thead><tr><th>VENDOR NAME</th><th>PRICE</th><th>TIER</th><th>SLA</th><th>SUPPORT</th><th>REGION</th><th>STATUS</th></tr></thead>
+                  <tbody>
+                    <tr><td>NORTHSTAR SYSTEMS</td><td>$4,016.67/mo</td><td>ENT</td><td>99.99</td><td>PREMIUM</td><td>US</td><td class="cell-green">YES</td></tr>
+                    <tr><td>RELAY PLATFORM</td><td>$4.4k/mo</td><td>GROWTH</td><td>99.95</td><td>STD</td><td>US/EU</td><td class="cell-yellow">MAYBE</td></tr>
+                    <tr><td>BEACON CLOUD</td><td>$57,600/yr</td><td>ENTERPRISE</td><td>4 NINES</td><td>PREMIUM</td><td>GLOBAL</td><td class="cell-green">YES</td></tr>
+                    <tr><td>ARC DATA</td><td>61K</td><td>CUSTOM</td><td>99.9</td><td>GOLD</td><td>US</td><td class="cell-red">NO</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="split-line" aria-hidden="true"><span></span></div>
+            <span class="stage-label before-label">Before</span>
+            <span class="stage-label after-label">After</span>
+          </div>
+          <div class="compare-control">
+            <label for="table-compare">Compare table designs</label>
+            <output for="table-compare" aria-hidden="true">50% before · 50% after</output>
+            <input id="table-compare" type="range" min="0" max="100" value="50" aria-describedby="table-summary table-position">
+            <p id="table-summary" class="sr-only">Before: inconsistent price formats, abbreviations, gridlines, and color-only status labels make comparison difficult. After: annual costs are aligned and statuses pair color with text and symbols.</p>
+            <span id="table-position" class="sr-only">Move left to reveal more of the redesigned table. Move right to reveal more of the original table.</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="principles" id="principles" aria-labelledby="principles-title">
+      <p class="eyebrow">The standard</p>
+      <h2 id="principles-title">Understanding is the output.</h2>
+      <ol>
+        <li><span>01</span><strong>Start with the reader’s question.</strong><p>Choose the representation for the decision, not for novelty.</p></li>
+        <li><span>02</span><strong>Protect the meaning.</strong><p>Preserve facts, uncertainty, scale, and comparison integrity.</p></li>
+        <li><span>03</span><strong>Remove cognitive errands.</strong><p>Put the answer where the reader is already looking.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="#top">Clear<span>↗</span></a>
+    <p>Open design skills for visual information.</p>
+    <p>2026</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

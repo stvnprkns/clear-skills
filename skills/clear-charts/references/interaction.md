@@ -2,6 +2,33 @@
 
 Interaction should expose additional understanding, not merely make a static chart feel sophisticated.
 
+## Decision contract
+
+### Principle
+
+Make the default state answer the primary question. Add interaction only for a secondary task that cannot be served as clearly and compactly in the initial state.
+
+### Use when
+
+- dense detail would overwhelm a useful overview;
+- users have genuine subset, comparison, scenario, or linked-view tasks;
+- responsive space requires progressive disclosure without hiding the primary message.
+
+### Reject when
+
+- hover is required to know series identity, status, or the main value;
+- filtering makes users remember one state to compare with another;
+- animation decorates rather than preserves identity or explains change;
+- controls exceed the analytical questions they enable.
+
+### Prefer instead
+
+Use persistent labels and references, side-by-side comparison, a static overview plus selected detail, or a table for exact lookup.
+
+### Escape conditions
+
+Keep interaction when it reveals meaningful detail without weakening the default. Six coordinated identity colors, keyboard-accessible focus, and a persistent overview can make a rich interactive chart more usable than a crowded static alternative.
+
 ## Interaction earns itself when it enables
 
 - detail on demand;
@@ -86,6 +113,8 @@ Linked views are useful when a selection in one representation reveals a relatio
 
 The connection must be visually obvious. Avoid silent changes elsewhere on the screen with no selected-state cue.
 
+For repeated plots sharing one domain, store selection as the domain value and derive every cursor, point, label, and readout from the same coordinate contract. Read [chart-construction.md](chart-construction.md) for shared plot geometry, pointer inversion, and synchronized scrub behavior.
+
 ## Animation
 
 Animation should explain change, preserve object identity, or reveal causality.
@@ -138,3 +167,7 @@ For interactive charts:
 Sliders, dropdowns, toggles, tabs, and playback controls create work. Add a control only when the user has a meaningful question that the control helps answer.
 
 A static small-multiple comparison often beats a clever interactive selector because simultaneous visibility reduces memory load.
+
+## Anti-pattern: local alignment fixes
+
+Do not treat a drifting tick, dot, guide, or cursor as isolated polish when it claims the same coordinate as another layer. Trace both elements to their domain, range, inset, and scale. A shared-coordinate repair is higher leverage than offsets that happen to align one viewport.

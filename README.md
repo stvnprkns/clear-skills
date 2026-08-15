@@ -8,19 +8,17 @@ The system is deliberately opinionated: it optimizes for comprehension, integrit
 
 > Visualization is not the output. Understanding is the output.
 
-## Status
+## Included skills
 
-The first production skill is **`clear-charts`**. It establishes the architecture, critique protocol, rule ownership model, and evaluation approach that future Clear skills should follow.
+- `clear-visuals` — umbrella routing, cross-domain review, and final consolidation
+- `clear-charts` — quantitative charts and plots
+- `clear-tables` — exact retrieval, dense comparison, sorting, and scanability
+- `clear-diagrams` — systems, flows, architecture, hierarchy, and relationships
+- `clear-dashboards` — recurring multi-view monitoring and decision environments
+- `clear-explainers` — narrative sequence, progressive reveal, and simulation
+- `clear-dataviz` — specialized quantitative forms that exceed standard chart grammar
 
-Planned suite:
-
-- `clear-visuals` — umbrella/orchestration across visual-information domains
-- `clear-charts` — quantitative charts and plots **(v1 included)**
-- `clear-diagrams` — systems, flows, architecture, relationships
-- `clear-dashboards` — multi-view decision environments
-- `clear-explainers` — narrative, interactive, and causal explanation
-- `clear-tables` — dense structured comparison and exact-value retrieval
-- `clear-dataviz` — advanced and unconventional visualization
+Each skill uses the same judgment architecture: actual question → cognitive/perceptual task → competing representations → rejection and escape conditions → evidence-backed review. Every domain has text evals, a restraint case, and at least one rendered visual fixture.
 
 ## Repository structure
 
@@ -30,25 +28,21 @@ clear-skills/
 ├── README.md
 ├── SOURCES.md
 ├── skills/
-│   └── clear-charts/
-│       ├── SKILL.md
-│       ├── agents/
-│       │   └── openai.yaml
-│       └── references/
-│           ├── chart-selection.md
-│           ├── encoding-and-comparison.md
-│           ├── scales-and-axes.md
-│           ├── labels-and-annotation.md
-│           ├── color.md
-│           ├── uncertainty-and-missing-data.md
-│           ├── interaction.md
-│           └── review-output.md
+│   ├── clear-visuals/
+│   ├── clear-charts/
+│   ├── clear-tables/
+│   ├── clear-diagrams/
+│   ├── clear-dashboards/
+│   ├── clear-explainers/
+│   └── clear-dataviz/
 ├── evals/
-│   └── clear-charts/
-│       ├── README.md
-│       ├── RUBRIC.md
-│       └── cases/
+│   └── <skill-name>/
+│       ├── README.md, RUBRIC.md, config.json
+│       ├── cases/
+│       └── visual/
 └── scripts/
+    ├── render_visual_evals.py
+    ├── run_evals.py
     └── validate_skills.py
 ```
 
@@ -62,7 +56,7 @@ This keeps the initial context small while allowing the skill to contain serious
 
 Codex supports skills as directories containing a required `SKILL.md` plus optional `references/`, `scripts/`, `assets/`, and `agents/openai.yaml` resources.
 
-Install or link the `skills/clear-charts` directory into a location Codex scans for skills, then invoke it explicitly from the skill picker/mention flow or allow Codex to match it from the `description` metadata.
+Install the whole suite with `scripts/link_codex_skills.sh`, or link an individual `skills/<skill-name>` directory. Invoke a domain explicitly, such as `$clear-diagrams`, or use `$clear-visuals` when the representation is undecided or crosses domains.
 
 ## Using in Claude Code / other Agent Skills-compatible tools
 
@@ -76,9 +70,11 @@ python3 scripts/validate_skills.py
 
 The validator checks required metadata, local Markdown links, reference targets, and naming consistency.
 
+Run deterministic chart-spec evidence checks with `skills/clear-charts/scripts/inspect-chart.py`. Run repeated baseline/Clear comparisons with `scripts/run_evals.py --skill <skill-name>`.
+
 ## Design principle
 
-Clear is not a chart-style library. It should be willing to say:
+Clear is not a visual-style library. It should be willing to say:
 
 - this should be a table, not a chart;
 - this chart is technically correct but makes the reader perform the key comparison;

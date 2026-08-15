@@ -1,5 +1,34 @@
 # Labels and Annotation
 
+## Decision contract
+
+### Principle
+
+Label what readers must identify; annotate what changes interpretation or action. Do not turn the chart into prose.
+
+### Use when
+
+- direct labels remove repeated legend lookup;
+- a threshold, event, caveat, or supported insight changes the decision;
+- exact values are few and central;
+- a partial period, forecast boundary, or denominator prevents misreading.
+
+### Reject when
+
+- every point is labeled despite pattern being primary;
+- annotation states a claim the data does not establish;
+- a dashboard narrates ordinary variation and competes with monitoring;
+- detached prose makes the eye search for the referenced mark;
+- the label merely repeats an axis or chart type.
+
+### Prefer instead
+
+Use selective endpoints, collision-managed direct labels, one labeled reference, or a concise subtitle that defines metric and comparison. Put secondary exact values in accessible detail.
+
+### Escape conditions
+
+Keep a compact legend when direct labels collide, series recur across coordinated views, or labels would obscure the data. Keep gridlines instead of dense value labels when across-distance estimation is the task.
+
 Text is part of the visualization. It should reduce translation between what the reader sees and what the data means.
 
 ## Direct labels first when practical

@@ -1,145 +1,106 @@
 ---
 name: clear-charts
 description: >-
-  Information-design judgment for choosing, creating, auditing, and improving quantitative charts and plots. Use for bar charts, line charts, scatterplots, distributions, time series, rankings, comparisons, part-to-whole charts, axes, scales, legends, labels, annotations, chart color, uncertainty, tooltips, and interactive charts. Triggers on chart, graph, plot, time series, trend, comparison, distribution, axis, scale, legend, tooltip, data visualization, chart review, chart audit, make this chart clearer.
+  Expert information-design judgment for choosing, creating, auditing, and rethinking quantitative charts under ambiguity. Use for charts, graphs, plots, time series, rankings, comparisons, distributions, dashboards, axes, scales, legends, labels, annotations, color, uncertainty, tooltips, responsive charts, chart review, or when the requested chart may be the wrong representation.
 ---
 
 # Clear Charts
 
-A chart succeeds when the relationship that matters becomes easier to see, compare, and understand without distorting the data.
+A chart is a decision interface. Optimize the comparison a reader must make, not the form requested or the statistically most interesting pattern.
 
-Optimize for understanding before novelty, decoration, or density. Determine what the reader needs to understand before selecting or improving a chart type. Do not preserve a requested representation merely because it already exists.
+Do not begin with chart type. Establish the decision, reader, question, perceptual task, and evidence needed. Treat the requested form as a hypothesis. When several forms are defensible, compare what each makes easy, what it hides, and what would make it fail.
 
-When reviewing, prioritize the smallest number of changes that would produce the largest improvement. A Clear review is a design critique, not a list of every technically possible refinement.
+Prioritize comprehension and integrity before polish. Recommend the smallest intervention that fixes the root problem. Preserve a strong chart explicitly; criticism is not the default outcome.
 
-`clear-tables` owns exact-value retrieval and dense tabular comparison. `clear-diagrams` owns processes, systems, and non-quantitative relationships. `clear-dashboards` owns multi-view information environments. `clear-explainers` owns narrative and explanatory interaction. `clear-visuals` owns cross-domain representation choice and consolidated review when those skills are available.
+`clear-tables` owns exact-value retrieval and dense tables. `clear-diagrams` owns processes and non-quantitative relationships. `clear-dashboards` owns multi-view environments. `clear-explainers` owns narrative sequencing and explanatory interaction. Use those skills when available; do not copy their rules here.
 
 ## Quick Reference
 
-| Category | Use when | Reference |
-| --- | --- | --- |
-| Chart selection | Decide whether to chart and which visual form fits the question | [chart-selection.md](references/chart-selection.md) |
-| Encoding & comparison | Position, length, area, grouping, ranking, small multiples | [encoding-and-comparison.md](references/encoding-and-comparison.md) |
-| Scales & axes | Baselines, domains, ticks, log scales, normalization, dual axes | [scales-and-axes.md](references/scales-and-axes.md) |
-| Labels & annotation | Direct labels, legends, titles, callouts, values, reference lines | [labels-and-annotation.md](references/labels-and-annotation.md) |
-| Color | Categorical, sequential, diverging, emphasis, accessibility | [color.md](references/color.md) |
-| Uncertainty & missingness | Estimates, intervals, incomplete observations, interpolation | [uncertainty-and-missing-data.md](references/uncertainty-and-missing-data.md) |
-| Interaction | Tooltips, filtering, brushing, zoom, selection, responsive behavior | [interaction.md](references/interaction.md) |
-| Review output | Priorities, Keep/Rethink, verification, verdict | [review-output.md](references/review-output.md) |
+| Need | Read |
+| --- | --- |
+| Frame the decision and actual question | [choosing-the-question.md](references/choosing-the-question.md) |
+| Challenge the requested form | [rethink-the-chart.md](references/rethink-the-chart.md) |
+| Choose among plausible chart families | [chart-selection.md](references/chart-selection.md) |
+| Resolve overlay, small multiple, ranking, and encoding tradeoffs | [encoding-and-comparison.md](references/encoding-and-comparison.md) |
+| Build axes, marks, overlays, and linked states from one coordinate contract | [chart-construction.md](references/chart-construction.md) |
+| Judge baselines, domains, normalization, and dual axes | [scales-and-axes.md](references/scales-and-axes.md) |
+| Decide what to label or annotate | [labels-and-annotation.md](references/labels-and-annotation.md) |
+| Use color for identity, order, state, or emphasis | [color.md](references/color.md) |
+| Handle estimates, missingness, and incomplete periods | [uncertainty-and-missing-data.md](references/uncertainty-and-missing-data.md) |
+| Decide whether interaction earns its cost | [interaction.md](references/interaction.md) |
+| Audit nonvisual access and input modes | [accessibility.md](references/accessibility.md) |
+| Trace empirical findings to rules and escape conditions | [research-foundations.md](references/research-foundations.md) |
+| Report a concise, evidence-backed review | [review-output.md](references/review-output.md) |
+
+## Operating Sequence
+
+1. **Frame** — State the decision, reader, actual question, and required perceptual task. Separate them from the requested form.
+2. **Generate** — Name two or three plausible representations, including a table or no chart when credible.
+3. **Trade off** — For each candidate, state what becomes easy, what becomes hard, and its rejection condition.
+4. **Choose** — Select the representation whose primary encoding matches the task. Decision relevance outranks visual or statistical novelty.
+5. **Inspect** — Use rendered evidence. Trace labels, marks, overlays, and pointer/focus states back to their scale and plot bounds when alignment or interaction is involved. When a supported chart specification is available, run `scripts/inspect-chart.py`; treat its output as evidence, never a verdict.
+6. **Intervene** — Fix the smallest number of root causes. Prefer one shared coordinate/state contract over local pixel corrections. Do not redesign sound choices.
+7. **Verify** — Check the rendered default, important states, narrow layout, non-hover access, and data/scale claims when available.
+8. **Report** — Use the review contract. Distinguish observed, inferred, and unverified claims.
 
 ## Core Principles
 
-### 1. Start With the Question
+### 1. Optimize the perceptual task
 
-State the relationship the reader needs to understand before choosing the chart.
+Translate the question into an operation the eye must perform: lookup, rank, compare magnitude, compare change, trace a path, find a threshold crossing, assess distribution, judge association, or inspect composition. A chart that contains the data but obscures that operation is not task-fit.
 
-Useful formulations include:
+### 2. Make alternatives compete
 
-- How has this changed over time?
-- Which category is largest or smallest?
-- How far are actuals from a target or reference?
-- What does the distribution look like?
-- Are two variables related?
-- Which items changed the most?
-- How does composition differ between groups?
+Do not jump from problem to favorite chart. For ambiguous cases, compare candidates explicitly. Prefer overlay for same-position comparison, small multiples for individual shape and identity, indexed views for relative change, and ranked deltas for endpoint change—but only when their rejection conditions do not apply.
 
-If the chart cannot be tied to a meaningful question, do not optimize its styling yet.
+### 3. Show decision-relevant structure
 
-### 2. Choose the Representation From the Relationship
+The most statistically unusual feature is not automatically the most useful one. Emphasize it only when it could change a decision, interpretation, or next action. Preserve material caveats even when they are not the headline.
 
-Choose the form that makes the required comparison easiest. Do not choose a visualization because it is visually interesting or convenient in the current charting library.
+### 4. Make the important comparison explicit
 
-If a simpler representation communicates the relationship equally well, prefer the simpler one. If exact lookup is the primary task, prefer a table. If the information is fundamentally about steps or dependencies rather than quantities, prefer a diagram.
+Do not make readers perform arithmetic or serial memory work the design can perform. Encode deltas, ranks, thresholds, references, or uncertainty directly when they are the question.
 
-### 3. Make the Important Comparison Explicit
+### 5. Make geometry share one source of truth
 
-Readers should not perform arithmetic the design can perform for them.
+Every element that claims to occupy the same data coordinate—axis label, tick, point, guide, hover target, annotation, or selection cursor—must derive from the same domain, plot bounds, and scale function. CSS distribution and chart-scale math are not interchangeable. Fix the coordinate contract before nudging individual marks.
 
-When the important fact is a difference, delta, ranking, threshold, target, or change in slope, expose that relationship directly through ordering, reference marks, derived values, or annotation.
+### 6. Treat scales and omission as arguments
 
-Do not force repeated eye travel between a legend, axis, and marks to reconstruct the intended comparison.
+Domains, baselines, normalization, aggregation, missingness, filtering, and partial periods all shape the claim. Reject choices that manufacture drama or erase material context. A zero baseline is normally required for bar length; it is not a universal rule for position-based charts.
 
-### 4. Prefer More Accurate Encodings When Precision Matters
+### 7. Spend attention deliberately
 
-For precise quantitative comparison, prefer common position and aligned length before area, angle, volume, or color intensity.
+Color, annotation, line weight, and interaction allocate attention. Highlight only when the focal series is decision-relevant and the remaining context stays sufficient to interpret it. Equal prominence is not neutrality when one relationship matters more.
 
-Less precise encodings can be appropriate when the task is to perceive an overall pattern, density, or composition. Do not use them merely for visual variety.
+### 8. Keep primary meaning persistent
 
-### 5. Treat Scales as Part of the Argument
+Hover, selection, and animation may add detail but must not contain the only series identity, value needed for the decision, benchmark, caveat, or instruction.
 
-A scale determines how magnitude is perceived.
+### 9. Preserve valid complexity
 
-Use domains and baselines appropriate to the visual encoding and intended comparison. Make non-obvious transformations such as logarithmic scales, indexing, normalization, or truncated domains explicit.
+Gridlines, multiple colors, interaction, and non-zero domains can be correct. Keep them when they support the task, identity across views, precision, or accessible exploration. Rules are evidence prompts, not automatic verdicts.
 
-Never increase visual drama by exaggerating differences.
+### 10. Know when to do nothing
 
-### 6. Label the Data, Not the Interface
-
-Place identifying information close to the marks it explains when doing so reduces lookup effort.
-
-Prefer direct labels over detached legends when the chart remains legible. Use units consistently. Titles and subtitles should add meaning or context rather than repeat the chart type.
-
-The primary message must not depend on a tooltip.
-
-### 7. Annotate Significance, Not Everything
-
-Use annotations to explain why a point, change, threshold, range, or event matters. Annotation creates hierarchy; it should not become a second dataset layered over the first.
-
-If the chart’s primary insight exists only in prose outside the visualization, consider moving the essential context closer to the relevant marks.
-
-### 8. Use Color as Meaning and Emphasis
-
-Color should encode a meaningful category, ordered value, divergence, state, or emphasis.
-
-Do not assign a different saturated hue to every category when identity is already obvious through position or labels. De-emphasize context so the important series can dominate.
-
-Never rely on color alone to communicate information.
-
-### 9. Represent Missingness and Uncertainty Honestly
-
-Do not silently convert missing observations to zero or connect gaps as though values were observed.
-
-Distinguish zero, unavailable, estimated, incomplete, and suppressed values when the distinction affects interpretation. When uncertainty could change the conclusion, represent it at an appropriate level.
-
-### 10. Interaction Must Earn Its Complexity
-
-Use interaction when it enables meaningful exploration, comparison, detail, or manipulation that would otherwise be difficult to provide.
-
-If removing an interaction leaves comprehension unchanged, remove it. Essential information must remain available without hover, and interactive states should be keyboard/focus accessible when the medium supports interaction.
-
-### 11. Reduce Before Adding
-
-When a chart feels unclear, first look for what can disappear.
-
-Grid lines, borders, legends, redundant labels, repeated units, decorative marks, unnecessary series, and container chrome all compete for attention. Remove only what does not help orientation, comparison, or interpretation.
-
-### 12. Preserve What Already Works
-
-A review is not a redesign exercise.
-
-Explicitly protect strong decisions. Recommend replacing the representation only when the current form creates a meaningful comprehension, integrity, or task-fit problem.
+If representation, integrity, hierarchy, labeling, and access already support the question, say so. Do not invent a quota of improvements. A review may conclude `Clear` with only verification notes.
 
 ## Common Mistakes
 
-| Mistake | Better approach |
+| Mistake | Corrective question |
 | --- | --- |
-| Choosing a chart before defining the question | Identify the relationship the reader must understand first |
-| Using the requested chart type as an immutable constraint | Treat it as a starting hypothesis unless the user explicitly requires it |
-| Giving every series equal prominence | Establish primary data and contextual data |
-| Asking readers to mentally calculate the key difference | Encode, derive, sort, or annotate the difference |
-| Using a detached legend for a few easily labeled series | Direct-label when space and collision allow |
-| Using saturated color simply because categories differ | Use color only when it carries meaning or hierarchy |
-| Hiding essential values or identity in hover | Make the primary information persistent |
-| Truncating or transforming a scale without disclosure | Make the transformation explicit and justify it |
-| Treating missing as zero | Encode missingness separately |
-| Connecting across a missing interval as observed continuity | Break or style the connection to reveal uncertainty/missingness |
-| Adding interaction that reveals nothing new | Remove the interaction |
-| Styling a fundamentally mismatched chart | Recommend a better representation before polishing |
-| Reporting every minor issue | Prioritize the highest-leverage changes |
-| Redesigning strong decisions | Include a Keep section and leave them intact |
+| Accepting the requested form | What is the actual decision and perceptual task? |
+| Naming one plausible chart immediately | What credible alternative exposes the comparison better? |
+| Applying a rule mechanically | What is the rule's escape condition here? |
+| Treating statistical interest as importance | Would this feature change a decision or explanation? |
+| Hiding context to strengthen emphasis | What comparison or base rate disappears? |
+| Fixing label/point drift with offsets | Which domain, range, inset, and scale should both use? |
+| Giving each repeated chart its own hover state | Is the reader comparing one shared domain value across rows? |
+| Listing every imperfection | Which one to three root changes materially improve understanding? |
+| Inferring runtime behavior from source | Which rendered states remain unverified? |
+| Treating detector output as truth | Does the surfaced evidence matter in this context? |
+| Redesigning an already strong chart | What concrete task or integrity failure justifies change? |
 
 ## Reporting
 
-For a standalone chart audit, use [review-output.md](references/review-output.md). The review is complete only when the highest-impact findings, deliberately preserved decisions, verification status, and verdict are reported.
-
-When `clear-visuals` orchestrates a future cross-domain review, its consolidated reporting rules take precedence while `clear-charts` remains the source of truth for chart-specific judgment.
+Use [review-output.md](references/review-output.md). A complete audit names the actual question, gives a verdict, reports only high-leverage findings, protects working decisions, and states verification limits.

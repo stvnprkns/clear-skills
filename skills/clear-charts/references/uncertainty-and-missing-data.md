@@ -2,6 +2,35 @@
 
 A chart should communicate not only observed values but also the limits of what those values mean when uncertainty or missingness could affect the conclusion.
 
+## Decision contract
+
+### Principle
+
+Show uncertainty or missingness when it could change the ranking, threshold judgment, confidence, or action. More statistical detail is not automatically more honest if readers cannot connect it to the decision.
+
+### Use when
+
+- plausible outcomes cross a decision threshold;
+- group ordering is unstable;
+- sample size or denominator materially changes trust;
+- forecast, estimate, provisional, missing, zero, and incomplete states could be confused.
+
+### Reject when
+
+- a point estimate is emphasized so strongly that intervals become decoration;
+- interval overlap is translated into an unsupported significance claim;
+- uncertainty is added with no explanation of what it represents;
+- a partial period is judged against complete periods;
+- missing observations are joined as measured continuity.
+
+### Prefer instead
+
+Use point + interval, quantile or outcome views when distributions affect action, like-for-like partial-period comparisons, explicit gaps, and concise decision-threshold annotation.
+
+### Escape conditions
+
+Do not add complex uncertainty encodings when uncertainty is immaterial to the task or unsupported by the data. State the limitation plainly. Preserve a simple operational total when intervals would not alter the response.
+
 ## Distinguish states that are not equivalent
 
 Do not collapse these into one visual state:

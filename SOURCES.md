@@ -35,7 +35,28 @@ Clear's wording and decision rules are original synthesis. Sources are used to g
 - W3C WAI, **Accessibility Principles**: https://www.w3.org/WAI/fundamentals/accessibility-principles/
 - Datawrapper, **How we make sure our charts, maps and tables are accessible**: https://www.datawrapper.de/academy/how-we-make-sure-our-charts-maps-and-tables-are-accessible
 
-## Foundational books and scholarship to incorporate in later research passes
+## Empirical visualization research
+
+- Cleveland, William S. and Robert McGill (1984), **Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods**. *Journal of the American Statistical Association*. https://doi.org/10.1080/01621459.1984.10478080
+- Heer, Jeffrey and Michael Bostock (2010), **Crowdsourcing Graphical Perception: Using Mechanical Turk to Assess Visualization Design**. *CHI*. https://doi.org/10.1145/1753326.1753357
+- Szafir, Danielle Albers (2018), **Modeling Color Difference for Visualization Design**. *IEEE Transactions on Visualization and Computer Graphics*. https://doi.org/10.1109/TVCG.2017.2744359
+- Szafir, Danielle Albers, Steve Haroz, Michael Gleicher, and Steven Franconeri (2016), **Four Types of Ensemble Coding in Data Visualizations**. *Journal of Vision*. https://doi.org/10.1167/16.5.11
+- Hullman, Jessica, Xiaoli Qiao, Michael Correll, Alex Kale, and Matthew Kay (2019), **In Pursuit of Error: A Survey of Uncertainty Visualization Evaluation**. *IEEE Transactions on Visualization and Computer Graphics*. https://doi.org/10.1109/TVCG.2018.2864889
+- Kale, Alex, Matthew Kay, and Jessica Hullman (2021), **Visual Reasoning Strategies for Effect Size Judgments and Decisions**. *IEEE Transactions on Visualization and Computer Graphics*. https://arxiv.org/abs/2007.14516
+- Rensink, Ronald A., J. Kevin O'Regan, and James J. Clark (1997), **To See or Not to See: The Need for Attention to Perceive Changes in Scenes**. *Psychological Science*. https://doi.org/10.1111/j.1467-9280.1997.tb00427.x
+- Boy, Jeremy, Ronald A. Rensink, Enrico Bertini, and Jean-Daniel Fekete (2014), **A Principled Way of Assessing Visualization Literacy**. *IEEE Transactions on Visualization and Computer Graphics*. https://doi.org/10.1109/TVCG.2014.2346984
+- Franconeri, Steven L., Lace M. Padilla, Priti Shah, Jeffrey M. Zacks, and Jessica Hullman (2021), **The Science of Visual Data Communication: What Works**. *Psychological Science in the Public Interest*. https://doi.org/10.1177/15291006211051956
+
+## Diagrams, explanation, and interaction
+
+- Larkin, Jill H. and Herbert A. Simon (1987), **Why a Diagram is (Sometimes) Worth Ten Thousand Words**. *Cognitive Science*. https://doi.org/10.1111/j.1551-6708.1987.tb00863.x
+- Morrison, Julie B., Barbara Tversky, and Mireille Betrancourt (2001), **The (In)effectiveness of Animation in Instruction**. *CHI Extended Abstracts*. https://doi.org/10.1145/634067.634290
+- Shneiderman, Ben (1996), **The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations**. *IEEE Symposium on Visual Languages*. https://doi.org/10.1109/VL.1996.545307
+- Brehmer, Matthew and Tamara Munzner (2013), **A Multi-Level Typology of Abstract Visualization Tasks**. *IEEE Transactions on Visualization and Computer Graphics*. https://doi.org/10.1109/TVCG.2013.124
+
+Runtime implications derived from these sources live in `skills/clear-charts/references/research-foundations.md`. Each is expressed as finding → principle → escape condition → review behavior so evidence does not become a slogan.
+
+## Foundational books and scholarship
 
 These are not reproduced in this repository. They are useful intellectual references for future rule refinement:
 
@@ -47,4 +68,4 @@ These are not reproduced in this repository. They are useful intellectual refere
 - Stephen Few — *Show Me the Numbers*
 - Cole Nussbaumer Knaflic — *Storytelling with Data*
 
-Future revisions should add empirical visualization research where it changes an actionable design rule, especially around graphical perception, uncertainty, interaction, and accessibility.
+These books provide broader design frameworks. Empirical claims in runtime guidance should still point to primary research where available.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Dashboards"
+  short_description: "Design coherent decision environments"
+  default_prompt: "Use $clear-dashboards to structure or audit this dashboard around its real monitoring and decision tasks."

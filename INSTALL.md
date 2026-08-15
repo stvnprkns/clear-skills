@@ -1,37 +1,41 @@
 # Install Clear in Codex
 
-## Repo-scoped installation
+Codex scans `.agents/skills` from the working directory through the repository root and also supports user-scoped skills.
 
-Codex scans `.agents/skills` from the working directory up through the repository root.
+## Install the suite
 
-From the Clear repository, link the skill into a target repository:
+Link every Clear skill into the default user-scoped location:
+
+```bash
+./scripts/link_codex_skills.sh
+```
+
+Or target a repository:
+
+```bash
+./scripts/link_codex_skills.sh /path/to/your-repo/.agents/skills
+```
+
+Existing destinations are preserved and reported as skipped.
+
+## Install one skill
 
 ```bash
 mkdir -p /path/to/your-repo/.agents/skills
-ln -s /absolute/path/to/clear-skills/skills/clear-charts \
-  /path/to/your-repo/.agents/skills/clear-charts
+ln -s /absolute/path/to/clear-skills/skills/clear-tables \
+  /path/to/your-repo/.agents/skills/clear-tables
 ```
 
-Codex supports symlinked skill folders.
-
-## User-scoped installation
-
-To make Clear Charts available across repositories:
-
-```bash
-mkdir -p "$HOME/.agents/skills"
-ln -s /absolute/path/to/clear-skills/skills/clear-charts \
-  "$HOME/.agents/skills/clear-charts"
-```
-
-Codex normally detects skill changes automatically. If a new or changed skill does not appear, restart Codex.
+Codex supports symlinked skill folders. Restart Codex if a newly linked skill does not appear automatically.
 
 ## Invoke
 
-In Codex CLI / IDE, use the skills UI or mention the skill with `$clear-charts`.
+Mention a domain explicitly:
 
-The skill also allows implicit invocation. Its `description` is intentionally scoped so chart/data-visualization tasks can trigger it while diagram-only or general UI work should not.
+```text
+Use $clear-diagrams to audit this architecture map.
+Use $clear-dashboards to rethink this KPI environment.
+Use $clear-tables to improve this comparison table.
+```
 
-## Future distribution
-
-Once Clear contains multiple mature skills, package the suite as a plugin for easier installation and distribution. Until then, keeping the skill directly inspectable in the repository makes iteration and eval work simpler.
+Use `$clear-visuals` when the correct representation is undecided or the artifact crosses multiple domains. Individual skills can also trigger implicitly from their descriptions.

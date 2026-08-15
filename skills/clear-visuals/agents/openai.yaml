@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Visuals"
+  short_description: "Route and consolidate visual design work"
+  default_prompt: "Use $clear-visuals to choose the right visual-information representation and consolidate a cross-domain review."

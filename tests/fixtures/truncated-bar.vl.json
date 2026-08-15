@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "team", "type": "nominal"},
+    "y": {
+      "field": "score",
+      "type": "quantitative",
+      "scale": {"domain": [93.5, 95.5]}
+    }
+  },
+  "data": {
+    "values": [
+      {"team": "A", "score": 94.1},
+      {"team": "B", "score": 94.6},
+      {"team": "C", "score": 95.0},
+      {"team": "D", "score": 95.3}
+    ]
+  }
+}

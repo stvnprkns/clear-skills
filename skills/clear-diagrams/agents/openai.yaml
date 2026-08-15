@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Diagrams"
+  short_description: "Clarify systems, flows, and relationships"
+  default_prompt: "Use $clear-diagrams to choose, create, or audit a diagram that makes the important relationships easy to follow."

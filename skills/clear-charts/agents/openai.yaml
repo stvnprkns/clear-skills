@@ -1,3 +1,4 @@
 interface:
   display_name: "Clear Charts"
-  short_description: "Choose, audit, and improve quantitative charts"
+  short_description: "Make difficult chart decisions with restraint"
+  default_prompt: "Use $clear-charts to identify the actual question, audit this chart, and recommend only changes that materially improve it."

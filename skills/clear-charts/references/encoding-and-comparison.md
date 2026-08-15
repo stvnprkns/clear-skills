@@ -64,19 +64,32 @@ Do not derive a metric whose definition materially changes the interpretation wi
 
 ## Small multiples
 
-Use small multiples when:
+### Decision framework: many time series
 
-- many series overlap in one coordinate space;
-- individual patterns matter;
-- the same structure repeats across groups;
-- comparison benefits from consistent geometry.
+| Candidate | Use when | Reject when | Cost accepted |
+| --- | --- | --- | --- |
+| Overlay | precise same-x comparison or crossings matter; few series remain distinguishable | identity tracing, occlusion, or color decoding dominates | individual shapes compete |
+| Highlighted overlay | one series is focal and context defines whether it is unusual | highlight predetermines an open-ended discovery task or hides materially different peers | context is less individually readable |
+| Small multiples | individual shape and identity matter; shared axes preserve level comparison | panel count defeats scanning or free scales would hide magnitude | same-x comparison requires eye travel |
+| Indexed overlay | relative growth from a meaningful common origin matters | starting values or absolute exposure change the decision | absolute magnitude is suppressed |
+| Ranked delta | endpoints and prioritization matter more than path | reversals, timing, or volatility explain the decision | intermediate trajectory moves secondary |
 
-Rules:
+For eight series, do not choose by count alone. Ask whether the reader must trace identity, compare at the same date, compare overall shape, or rank change.
 
-- keep scales shared when magnitude comparison across panels matters;
-- allow free scales only when shape is the intended comparison, and disclose that choice;
-- use the same ordering and visual grammar across panels;
-- place labels in or near panels; do not require a remote legend if avoidable.
+Keep scales shared when magnitude comparison across panels matters. Use free scales only when shape is explicitly the task, disclose them prominently, and reject them if level is decision-relevant. Keep ordering and visual grammar stable across panels.
+
+### Highlighting without distortion
+
+Use emphasis when the focal series is selected by the reader, named by the decision, or justified by a stated threshold. Preserve enough context to judge whether it is representative.
+
+Reject emphasis when it:
+
+- implies importance only because a series was preselected;
+- mutes a peer that would reverse the conclusion;
+- uses a strong hue to suggest good/bad without that semantic basis;
+- turns an exploratory question into a predetermined story.
+
+Escape condition: coordinated views may keep one identity color across all panels even when no series is globally “most important”; consistency, not rhetorical emphasis, is doing the work.
 
 ## Layering
 
