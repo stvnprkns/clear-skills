@@ -19,6 +19,7 @@ Start with the question and topology. Choose notation only after deciding whethe
 | Translate the question into topology and diagram family | [question-and-topology.md](references/question-and-topology.md) |
 | Arrange nodes, edges, direction, and reading order | [layout-and-routing.md](references/layout-and-routing.md) |
 | Define notation, boundaries, levels, and uncertainty | [notation-and-boundaries.md](references/notation-and-boundaries.md) |
+| Verify access, legibility, sizing, and evidence claims | [evidence-and-verification.md](../clear-visuals/references/evidence-and-verification.md) |
 | Report a standalone audit | [review-output.md](references/review-output.md) |
 
 ## Operating Sequence
@@ -29,7 +30,7 @@ Start with the question and topology. Choose notation only after deciding whethe
 4. Establish a primary reading path and meaningful boundaries.
 5. Reduce crossings, backtracking, legend lookup, and decorative nodes.
 6. Encode edge semantics and exceptions explicitly; do not imply causality or sequence accidentally.
-7. Verify representative, error/alternate, narrow, and accessible reading states.
+7. Apply the suite evidence contract. Verify representative, error/alternate, narrow, keyboard, nonvisual, and accessible reading states; provide a structured text equivalent for meaningful rendered diagrams.
 8. Report root causes and preserve defensible notation.
 
 ## Core Principles

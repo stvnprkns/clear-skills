@@ -10,7 +10,12 @@
 
 ## Findings
 
-Use no more than five. Include **Impact**, **Problem**, **Why**, **Change**, and **Evidence**. Prioritize invalid transformation, false topology, conservation failures, and inaccessible primary meaning.
+Use no more than five rows in a markdown table:
+
+| Priority | Location | Current | Recommended | Why |
+| --- | --- | --- | --- | --- |
+
+Use `CRITICAL`, `HIGH`, `MEDIUM`, or `LOW`. Cite the exact mark, transformation, interaction, screenshot region, or `path/to/file:line`; use `Not verified` rather than inventing a location. Describe the observed state in **Current**, make **Recommended** actionable, and explain the decoding, integrity, or accessibility cost in **Why**. Consolidate one root cause into one row. Prioritize invalid transformation, false topology, conservation failures, and inaccessible primary meaning. Omit `LOW` polish by default; when there are no findings, omit the table and state `No actionable specialized-dataviz findings`.
 
 ## Keep
 

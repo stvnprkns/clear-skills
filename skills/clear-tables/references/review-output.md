@@ -12,7 +12,12 @@ Report no more than five findings; use fewer when warranted.
 
 ## Findings
 
-For each finding include **Impact** (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`), **Problem**, **Why**, **Change**, and **Evidence**. Prioritize corrupted meaning, mixed grain, inaccessible interaction, and failed comparison before polish.
+Use no more than five rows in a markdown table:
+
+| Priority | Location | Current | Recommended | Why |
+| --- | --- | --- | --- | --- |
+
+Use `CRITICAL`, `HIGH`, `MEDIUM`, or `LOW`. Cite the exact row, column, header, control, state, screenshot region, or `path/to/file:line`; use `Not verified` rather than inventing a location. Describe the observed table decision in **Current**, make **Recommended** actionable, and explain the retrieval, comparison, or integrity cost in **Why**. Prioritize corrupted meaning, mixed grain, inaccessible interaction, and failed comparison before polish. Omit `LOW` polish by default; when there are no findings, omit the table and state `No actionable table findings`.
 
 One semantic root cause equals one finding. Put sorting consequences, misleading amounts, row styling, and acceptance criteria caused by the same mixed-grain structure inside that one finding. Do not split them into separate findings merely because they appear in different columns or states.
 

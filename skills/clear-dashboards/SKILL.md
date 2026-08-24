@@ -17,6 +17,7 @@ Use `clear-charts` for chart-level encoding, `clear-tables` for exact retrieval,
 | Define audience, decisions, cadence, and KPI environment | [decision-environment.md](references/decision-environment.md) |
 | Build hierarchy and relationships across views | [view-composition.md](references/view-composition.md) |
 | Design controls, drilldowns, freshness, and system states | [controls-and-states.md](references/controls-and-states.md) |
+| Verify access, targets, responsive states, and evidence claims | [evidence-and-verification.md](../clear-visuals/references/evidence-and-verification.md) |
 | Report a standalone audit | [review-output.md](references/review-output.md) |
 
 ## Operating Sequence
@@ -27,7 +28,7 @@ Use `clear-charts` for chart-level encoding, `clear-tables` for exact retrieval,
 4. Build a default hierarchy: state → exception → explanation → detail/action.
 5. Give every view a job and every control a real analytical question.
 6. Coordinate filters, selections, time ranges, units, and identities explicitly.
-7. Verify loading, stale, empty, error, partial, filtered, narrow, and accessible states.
+7. Apply the suite evidence contract. Verify loading, stale, empty, error, partial, filtered, narrow, zoomed, keyboard, target-size, reduced-motion, and assistive states.
 8. Report systemic root causes before chart-level craft.
 
 ## Core Principles

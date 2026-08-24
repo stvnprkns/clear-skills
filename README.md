@@ -1,5 +1,7 @@
 # Clear
 
+[![skills.sh](https://skills.sh/b/stvnprkns/clear-skills)](https://skills.sh/stvnprkns/clear-skills)
+
 **Design skills for making complex information understandable.**
 
 Clear is a suite of agent skills for creating, auditing, and improving charts, diagrams, dashboards, tables, interactive explainers, and other forms of visual information.
@@ -57,6 +59,16 @@ This keeps the initial context small while allowing the skill to contain serious
 Codex supports skills as directories containing a required `SKILL.md` plus optional `references/`, `scripts/`, `assets/`, and `agents/openai.yaml` resources.
 
 Install the whole suite with `scripts/link_codex_skills.sh`, or link an individual `skills/<skill-name>` directory. Invoke a domain explicitly, such as `$clear-diagrams`, or use `$clear-visuals` when the representation is undecided or crosses domains.
+
+## Install from skills.sh
+
+Install the suite from its public GitHub source:
+
+```bash
+npx skills add stvnprkns/clear-skills
+```
+
+The installer discovers every valid `SKILL.md` in the repository and lets you install the complete suite or selected Clear skills.
 
 ## Using in Claude Code / other Agent Skills-compatible tools
 

@@ -9,7 +9,12 @@
 
 ## Findings
 
-Use no more than five. For each include **Impact**, **Problem**, **Why**, **Change**, and **Evidence**. Prioritize metric integrity, misleading state, broken hierarchy, and lost scope before individual chart polish.
+Use no more than five rows in a markdown table:
+
+| Priority | Location | Current | Recommended | Why |
+| --- | --- | --- | --- | --- |
+
+Use `CRITICAL`, `HIGH`, `MEDIUM`, or `LOW`. Cite the exact view, control, state, screenshot region, or `path/to/file:line`; use `Not verified` rather than inventing a location. Describe the observed state in **Current**, make **Recommended** actionable, and explain the decision or comprehension cost in **Why**. Consolidate systemic issues and list every affected location in one row. Prioritize metric integrity, misleading state, broken hierarchy, and lost scope before individual chart polish. Omit `LOW` polish by default; when there are no findings, omit the table and state `No actionable dashboard findings`.
 
 ## Cross-view effects
 

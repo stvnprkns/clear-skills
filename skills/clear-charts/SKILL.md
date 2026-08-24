@@ -30,6 +30,7 @@ Prioritize comprehension and integrity before polish. Recommend the smallest int
 | Decide whether interaction earns its cost | [interaction.md](references/interaction.md) |
 | Audit nonvisual access and input modes | [accessibility.md](references/accessibility.md) |
 | Trace empirical findings to rules and escape conditions | [research-foundations.md](references/research-foundations.md) |
+| Apply the suite-wide evidence and verification contract | [evidence-and-verification.md](../clear-visuals/references/evidence-and-verification.md) |
 | Report a concise, evidence-backed review | [review-output.md](references/review-output.md) |
 
 ## Operating Sequence

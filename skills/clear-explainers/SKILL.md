@@ -17,6 +17,7 @@ Use `clear-charts` for quantitative encodings and `clear-diagrams` for topology.
 | Define the mental-model change and narrative spine | [explanatory-arc.md](references/explanatory-arc.md) |
 | Decide what to reveal, persist, compare, or repeat | [progressive-reveal.md](references/progressive-reveal.md) |
 | Design simulation and explanatory interaction | [simulation-and-interaction.md](references/simulation-and-interaction.md) |
+| Verify access, motion, comprehension, and evidence claims | [evidence-and-verification.md](../clear-visuals/references/evidence-and-verification.md) |
 | Report a standalone audit | [review-output.md](references/review-output.md) |
 
 ## Operating Sequence
@@ -27,7 +28,7 @@ Use `clear-charts` for quantitative encodings and `clear-diagrams` for topology.
 4. Decide what stays persistent, what changes, and what readers control.
 5. Separate observed evidence, interpretation, mechanism, and uncertainty.
 6. Provide orientation, pacing, reversibility, and a meaningful static/default state.
-7. Verify reduced motion, keyboard, narrow layout, restart, deep-link, and interrupted reading.
+7. Apply the suite evidence contract. Verify reduced motion, keyboard, narrow and zoomed layout, restart, deep-link, interrupted reading, meaningful sequence, and a nonanimated equivalent. Use representative-user tasks before claiming that the intended model was understood.
 8. Report where the mental model breaks, not every decorative issue.
 
 ## Core Principles

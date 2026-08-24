@@ -19,6 +19,7 @@ Start from the retrieval or comparison task. Do not turn a table into a chart me
 | Decide whether a table is primary and orient its schema | [selection-and-structure.md](references/selection-and-structure.md) |
 | Tune ordering, hierarchy, density, and inline encodings | [scan-and-density.md](references/scan-and-density.md) |
 | Design sorting, filtering, responsive behavior, and access | [interaction-and-accessibility.md](references/interaction-and-accessibility.md) |
+| Verify access, density, target size, and evidence claims | [evidence-and-verification.md](../clear-visuals/references/evidence-and-verification.md) |
 | Report a standalone audit | [review-output.md](references/review-output.md) |
 
 ## Operating Sequence
@@ -29,7 +30,7 @@ Start from the retrieval or comparison task. Do not turn a table into a chart me
 4. Order rows and columns around the dominant task, not source-system order.
 5. Establish hierarchy with alignment, whitespace, rules, typography, and restrained state color.
 6. Add sorting, filtering, freezing, expansion, or pagination only for real tasks.
-7. Verify representative, empty, long-label, narrow, keyboard, and assistive states.
+7. Apply the suite evidence contract. Verify native header relationships, representative, empty, long-label, narrow, zoomed, text-spacing, keyboard, target-size, and assistive states.
 8. Report the smallest set of changes that improves retrieval or decision quality.
 
 In review, consolidate all symptoms of one semantic defect. Mixed row grain plus its sorting and styling consequences is one finding, not a quota of adjacent findings.

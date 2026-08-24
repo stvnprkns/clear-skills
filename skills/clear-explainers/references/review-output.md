@@ -9,7 +9,12 @@
 
 ## Findings
 
-Use no more than five. Include **Impact**, **Problem**, **Why**, **Change**, and **Evidence**. Prioritize unsupported causal claims, missing prerequisites, vanished comparison anchors, and invalid simulation behavior.
+Use no more than five rows in a markdown table:
+
+| Priority | Location | Current | Recommended | Why |
+| --- | --- | --- | --- | --- |
+
+Use `CRITICAL`, `HIGH`, `MEDIUM`, or `LOW`. Cite the exact scene, step, control, state, screenshot region, or `path/to/file:line`; use `Not verified` rather than inventing a location. Describe the observed sequence or behavior in **Current**, make **Recommended** actionable, and explain the mental-model or decision cost in **Why**. Consolidate one narrative root cause into one row and list every affected step. Prioritize unsupported causal claims, missing prerequisites, vanished comparison anchors, and invalid simulation behavior. Omit `LOW` polish by default; when there are no findings, omit the table and state `No actionable explainer findings`.
 
 ## Sequence revision
 

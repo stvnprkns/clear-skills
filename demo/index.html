@@ -25,10 +25,10 @@
     <section class="hero" aria-labelledby="hero-title">
       <p class="eyebrow">Visual information design skills for agents</p>
       <h1 id="hero-title">Less effort.<br>More understanding.</h1>
-      <p class="lede">Clear helps agents choose, create, and critique charts, tables, diagrams, dashboards, and explainers—without distorting the information.</p>
+      <p class="lede">Clear helps agents choose, create, and critique charts, tables, diagrams, dashboards, explainers, and specialized visualizations—without distorting the information.</p>
       <div class="hero-note">
         <span class="note-line" aria-hidden="true"></span>
-        <p>Drag each slider to compare the same data before and after Clear.</p>
+        <p>Use each example, then drag its slider to compare before and after Clear.</p>
       </div>
     </section>
 
@@ -134,6 +134,189 @@
             <input id="table-compare" type="range" min="0" max="100" value="50" aria-describedby="table-summary table-position">
             <p id="table-summary" class="sr-only">Before: inconsistent price formats, abbreviations, gridlines, and color-only status labels make comparison difficult. After: annual costs are aligned and statuses pair color with text and symbols.</p>
             <span id="table-position" class="sr-only">Move left to reveal more of the redesigned table. Move right to reveal more of the original table.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="example" data-example="diagram">
+        <header class="example-copy">
+          <div>
+            <p class="example-number">03 / Diagram</p>
+            <h2>Make the path traceable.</h2>
+          </div>
+          <p>The redesign separates system boundaries, labels what each arrow means, and lets the reader inspect the normal path or retry path without inventing topology.</p>
+        </header>
+
+        <div class="compare" style="--split: 50%">
+          <div class="data-control mode-control" role="group" aria-label="Diagram path">
+            <button type="button" class="mode-button is-active" data-diagram-mode="success" aria-pressed="true">Success path</button>
+            <button type="button" class="mode-button" data-diagram-mode="retry" aria-pressed="false">Retry path</button>
+          </div>
+          <div class="compare-stage domain-stage diagram-stage">
+            <div class="visual visual-after" aria-hidden="true">
+              <div class="domain-shell diagram-after">
+                <div class="domain-heading"><strong>Payment authorization</strong><span data-diagram-status>Success path · 4 steps</span></div>
+                <svg id="diagram-after" viewBox="0 0 760 360" role="img" aria-label="A payment authorization sequence with labeled requests and system boundaries."></svg>
+              </div>
+            </div>
+            <div class="visual visual-before" aria-hidden="true">
+              <div class="domain-shell diagram-before">
+                <div class="legacy-title">PAYMENT SYSTEM FLOW</div>
+                <svg id="diagram-before" viewBox="0 0 760 360" role="img" aria-label="An ambiguous payment system diagram with crossing, unlabeled arrows."></svg>
+              </div>
+            </div>
+            <div class="split-line" aria-hidden="true"><span></span></div>
+            <span class="stage-label before-label">Before</span>
+            <span class="stage-label after-label">After</span>
+          </div>
+          <div class="compare-control">
+            <label for="diagram-compare">Compare diagram designs</label>
+            <output for="diagram-compare" aria-hidden="true">50% before · 50% after</output>
+            <input id="diagram-compare" type="range" min="0" max="100" value="50" aria-describedby="diagram-summary diagram-position">
+            <p id="diagram-summary" class="sr-only">The improved diagram separates customer, product, payment, and bank boundaries and labels each request or response.</p>
+            <span id="diagram-position" class="sr-only">Move left to reveal more of the redesigned diagram. Move right to reveal more of the original diagram.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="example" data-example="dashboard">
+        <header class="example-copy">
+          <div>
+            <p class="example-number">04 / Dashboard</p>
+            <h2>Lead with material state.</h2>
+          </div>
+          <p>The redesign turns a wall of equal KPIs into a decision environment: current state, consequential exception, freshness, diagnosis, and next action.</p>
+        </header>
+
+        <div class="compare" style="--split: 50%">
+          <div class="data-control mode-control" role="group" aria-label="Dashboard data state">
+            <button type="button" class="mode-button is-active" data-dashboard-mode="live" aria-pressed="true">Live data</button>
+            <button type="button" class="mode-button" data-dashboard-mode="stale" aria-pressed="false">Stale feed</button>
+          </div>
+          <div class="compare-stage domain-stage dashboard-stage">
+            <div class="visual visual-after" aria-hidden="true">
+              <div class="domain-shell dashboard-after">
+                <div class="dashboard-topline"><div><strong>Operations overview</strong><span data-dashboard-freshness>Updated 2 min ago</span></div><span class="status status-review" data-dashboard-state>● 3 need attention</span></div>
+                <div class="decision-grid">
+                  <section class="primary-state"><span>Orders at risk</span><strong data-risk-value>18</strong><small>↑ 7 since yesterday · Owner: Fulfillment</small></section>
+                  <section class="exception-list"><strong>Why attention is needed</strong><p><span>West hub backlog</span><b>11 orders</b></p><p><span>Carrier cutoff risk</span><b>7 orders</b></p></section>
+                </div>
+                <div class="dashboard-detail"><span>On-time fulfillment</span><strong>92.4%</strong><span>Target</span><strong>96%</strong><span class="dashboard-action">Review at-risk orders</span></div>
+              </div>
+            </div>
+            <div class="visual visual-before" aria-hidden="true">
+              <div class="domain-shell dashboard-before">
+                <div class="legacy-title">EXECUTIVE KPI DASHBOARD</div>
+                <div class="kpi-wall">
+                  <div><span>Revenue</span><strong>$1.2M</strong></div><div><span>Orders</span><strong>842</strong></div><div><span>Conversion</span><strong>3.8%</strong></div><div><span>At risk</span><strong data-risk-value-before>18</strong></div><div><span>NPS</span><strong>42</strong></div><div><span>On time</span><strong>92.4%</strong></div>
+                </div>
+                <div class="dashboard-bars"><i style="--h:44%"></i><i style="--h:68%"></i><i style="--h:53%"></i><i style="--h:82%"></i><i style="--h:61%"></i><i style="--h:74%"></i></div>
+              </div>
+            </div>
+            <div class="split-line" aria-hidden="true"><span></span></div>
+            <span class="stage-label before-label">Before</span>
+            <span class="stage-label after-label">After</span>
+          </div>
+          <div class="compare-control">
+            <label for="dashboard-compare">Compare dashboard designs</label>
+            <output for="dashboard-compare" aria-hidden="true">50% before · 50% after</output>
+            <input id="dashboard-compare" type="range" min="0" max="100" value="50" aria-describedby="dashboard-summary dashboard-position">
+            <p id="dashboard-summary" class="sr-only">The improved dashboard prioritizes orders at risk, explains the causes, identifies ownership, reports freshness, and provides an action.</p>
+            <span id="dashboard-position" class="sr-only">Move left to reveal more of the redesigned dashboard. Move right to reveal more of the original dashboard.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="example" data-example="explainer">
+        <header class="example-copy">
+          <div>
+            <p class="example-number">05 / Explainer</p>
+            <h2>Keep the mental model intact.</h2>
+          </div>
+          <p>The redesign advances one causal relationship at a time while keeping prior quantities visible, so readers can understand how demand becomes delay.</p>
+        </header>
+
+        <div class="compare" style="--split: 50%">
+          <div class="data-control step-control">
+            <button type="button" id="explainer-prev">Previous</button>
+            <span><b data-step-current>1</b> / 3</span>
+            <button type="button" id="explainer-next">Next step</button>
+          </div>
+          <div class="compare-stage domain-stage explainer-stage">
+            <div class="visual visual-after" aria-hidden="true">
+              <div class="domain-shell explainer-after">
+                <div class="domain-heading"><strong data-explainer-title>Demand arrives</strong><span>Step <span data-step-current>1</span> of 3</span></div>
+                <div class="model-track">
+                  <div class="model-node is-current" data-model-node="0"><span>Demand</span><strong data-demand>120</strong><small>jobs / day</small></div>
+                  <i>→</i>
+                  <div class="model-node" data-model-node="1"><span>Capacity</span><strong>100</strong><small>jobs / day</small></div>
+                  <i>→</i>
+                  <div class="model-node" data-model-node="2"><span>Backlog</span><strong data-backlog>20</strong><small>jobs added</small></div>
+                </div>
+                <p class="explanation" data-explainer-copy>Start with incoming demand. The comparison anchor stays visible as capacity and backlog are introduced.</p>
+              </div>
+            </div>
+            <div class="visual visual-before" aria-hidden="true">
+              <div class="domain-shell explainer-before">
+                <div class="legacy-title">HOW DELAYS HAPPEN</div>
+                <div class="vanishing-scene" data-before-scene><strong>120</strong><span>New jobs arrive today</span></div>
+                <div class="progress-dots"><i class="is-current"></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="split-line" aria-hidden="true"><span></span></div>
+            <span class="stage-label before-label">Before</span>
+            <span class="stage-label after-label">After</span>
+          </div>
+          <div class="compare-control">
+            <label for="explainer-compare">Compare explainer designs</label>
+            <output for="explainer-compare" aria-hidden="true">50% before · 50% after</output>
+            <input id="explainer-compare" type="range" min="0" max="100" value="50" aria-describedby="explainer-summary explainer-position">
+            <p id="explainer-summary" class="sr-only">The improved explainer preserves demand and capacity while revealing backlog, preventing the reader from remembering vanished prior steps.</p>
+            <span id="explainer-position" class="sr-only">Move left to reveal more of the redesigned explainer. Move right to reveal more of the original explainer.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="example" data-example="dataviz">
+        <header class="example-copy">
+          <div>
+            <p class="example-number">06 / Dataviz</p>
+            <h2>Make every flow account for itself.</h2>
+          </div>
+          <p>The redesigned Sankey earns its complexity by conserving quantity, exposing losses, and keeping a plain-language accounting fallback next to the flow.</p>
+        </header>
+
+        <div class="compare" style="--split: 50%">
+          <div class="data-control scrub-control flow-control">
+            <label for="flow-input">Incoming applications</label>
+            <output for="flow-input" aria-hidden="true">100</output>
+            <input id="flow-input" type="range" min="60" max="140" step="10" value="100" aria-describedby="dataviz-summary">
+          </div>
+          <div class="compare-stage domain-stage dataviz-stage">
+            <div class="visual visual-after" aria-hidden="true">
+              <div class="domain-shell sankey-after">
+                <div class="domain-heading"><strong>Application flow</strong><span>Widths encode applications</span></div>
+                <svg id="sankey-after" viewBox="0 0 760 360" role="img" aria-label="A conserved application flow from intake to reviewed, approved, declined, and withdrawn outcomes."></svg>
+                <div class="flow-accounting"><span>Incoming <b data-flow-in>100</b></span><span>Accounted for <b data-flow-out>100</b></span><span>Difference <b>0</b></span></div>
+              </div>
+            </div>
+            <div class="visual visual-before" aria-hidden="true">
+              <div class="domain-shell sankey-before">
+                <div class="legacy-title">APPLICATION FUNNEL FLOW</div>
+                <svg id="sankey-before" viewBox="0 0 760 360" role="img" aria-label="An invalid Sankey where outgoing widths do not conserve the incoming quantity."></svg>
+                <p class="legacy-flow-total">Incoming: <b data-flow-in-before>100</b> · Outcomes shown: <b data-flow-bad-total>117</b></p>
+              </div>
+            </div>
+            <div class="split-line" aria-hidden="true"><span></span></div>
+            <span class="stage-label before-label">Before</span>
+            <span class="stage-label after-label">After</span>
+          </div>
+          <div class="compare-control">
+            <label for="dataviz-compare">Compare specialized visualizations</label>
+            <output for="dataviz-compare" aria-hidden="true">50% before · 50% after</output>
+            <input id="dataviz-compare" type="range" min="0" max="100" value="50" aria-describedby="dataviz-summary dataviz-position">
+            <p id="dataviz-summary" class="sr-only">The improved Sankey conserves the incoming total across approved, declined, and withdrawn outcomes and provides an exact accounting summary.</p>
+            <span id="dataviz-position" class="sr-only">Move left to reveal more of the redesigned Sankey. Move right to reveal more of the invalid original.</span>
           </div>
         </div>
       </article>

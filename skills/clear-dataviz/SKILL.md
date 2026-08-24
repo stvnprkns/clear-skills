@@ -17,6 +17,7 @@ Use a specialized form only when it exposes a decision-relevant structure that a
 | Test whether a specialized form earns itself | [complexity-test.md](references/complexity-test.md) |
 | Choose among specialized form families | [specialized-forms.md](references/specialized-forms.md) |
 | Validate transformations, perception, and fallbacks | [validation-and-fallbacks.md](references/validation-and-fallbacks.md) |
+| Verify access, legibility, user evidence, and claim boundaries | [evidence-and-verification.md](../clear-visuals/references/evidence-and-verification.md) |
 | Report a standalone audit | [review-output.md](references/review-output.md) |
 
 ## Operating Sequence
@@ -26,7 +27,7 @@ Use a specialized form only when it exposes a decision-relevant structure that a
 3. Name the additional structure the specialized form reveals and the decoding cost it adds.
 4. Validate transformation, conservation, aggregation, topology, scale, and occlusion.
 5. Provide orientation, labels, examples, interaction, or a fallback proportional to unfamiliarity.
-6. Test representative and adversarial data, narrow layout, color loss, and noninteractive output.
+6. Apply the suite evidence contract. Test representative and adversarial data, narrow and zoomed layout, color loss, keyboard access, structured text/data fallback, and noninteractive output. Require representative-user evidence before claiming an unfamiliar form is understandable to its intended audience.
 7. Prefer the baseline unless the specialized form wins materially.
 8. Report both the gain and the cost.
 

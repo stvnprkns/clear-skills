@@ -18,7 +18,7 @@ Do not start with praise filler. If the representation is fundamentally mismatch
 
 ## 2. Findings
 
-Order by impact, then leverage.
+Order by impact, then leverage. Use one markdown table with **Priority**, **Location**, **Current**, **Recommended**, and **Why** columns. Keep each cell concise enough to scan; put supporting detail after the table only when it is necessary to implement or verify a finding.
 
 ### Priority levels
 
@@ -27,19 +27,17 @@ Order by impact, then leverage.
 - **MEDIUM** — The chart is understandable but meaningfully slower, noisier, or harder to compare than necessary.
 - **LOW** — Isolated craft/polish. Omit by default unless the user asks for detailed polish.
 
-For each finding use exactly these fields:
+| Priority | Location | Current | Recommended | Why |
+| --- | --- | --- | --- | --- |
+| HIGH | Revenue chart · plot and legend | Six similarly weighted series compete for attention | Emphasize the decision-critical series; mute the remainder and label the focus directly | The primary comparison currently requires repeated legend lookup |
 
-### Priority N — Short diagnostic title
-**Impact:** CRITICAL | HIGH | MEDIUM | LOW
+- **Priority:** use `CRITICAL`, `HIGH`, `MEDIUM`, or `LOW`.
+- **Location:** cite the exact chart element, screen/component, screenshot region, or `path/to/file:line`. Use `Not verified` when the location cannot be inspected.
+- **Current:** describe the observed design decision, not a vague symptom.
+- **Recommended:** give a concrete replacement or change. Name a different representation only when needed.
+- **Why:** explain the effect on comprehension, comparison, integrity, or user effort.
 
-**Problem**  
-Describe the current design decision, not a vague symptom.
-
-**Why**  
-Explain how it changes comprehension, comparison, integrity, or user effort.
-
-**Change**  
-Give a concrete recommendation. Name a replacement chart/pattern only when needed.
+Consolidate a repeated systemic issue into one row and list every affected location. Omit `LOW` polish by default. When there are no findings, omit the table and state `No actionable chart findings`.
 
 When the finding concerns rendered chart geometry or interaction, make the change implementation-ready by naming:
 
@@ -50,10 +48,7 @@ When the finding concerns rendered chart geometry or interaction, make the chang
 
 Do not stop at “align the dots,” “tighten spacing,” or “make the interaction clearer.” Those describe an outcome but do not identify the construction fault.
 
-When evidence supports one coordinate model, choose it in the final contract and explain why. Do not leave mutually exclusive formulas as an unresolved `OR`. If the evidence truly cannot distinguish them, name exactly what must be inspected and label the recommendation provisional.
-
-**Evidence**  
-Point to the chart element, data relationship, screenshot region, or source/code location that supports the finding. If evidence cannot be inspected, say `Not verified` rather than inventing precision.
+When evidence supports one coordinate model, choose it in the final contract and explain why. Do not leave mutually exclusive formulas as an unresolved `OR`. If the evidence truly cannot distinguish them, name exactly what must be inspected in **Recommended** and label the recommendation provisional.
 
 ## 3. Rethink
 

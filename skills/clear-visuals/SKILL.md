@@ -16,6 +16,7 @@ This skill owns representation-level orchestration, cross-domain conflicts, revi
 | --- | --- |
 | Route a question to one or more domain owners | [routing.md](references/routing.md) |
 | Create a representation brief before implementation | [representation-brief.md](references/representation-brief.md) |
+| Ground accessibility, perception, sizing, and usability claims in evidence | [evidence-and-verification.md](references/evidence-and-verification.md) |
 | Resolve cross-domain conflicts and consolidate review | [consolidated-review.md](references/consolidated-review.md) |
 
 ## Domain Owners
@@ -37,7 +38,7 @@ This skill owns representation-level orchestration, cross-domain conflicts, revi
 4. Ask owners for candidate, rejection condition, tradeoff, and preserved decisions—not exhaustive findings.
 5. Resolve conflicts by the primary user task, integrity, accessibility, and system constraints.
 6. Consolidate root causes across domains; remove duplicates and implementation preferences.
-7. Verify the whole artifact's reading order, responsive behavior, states, and handoffs.
+7. Read [evidence-and-verification.md](references/evidence-and-verification.md) when the output makes accessibility, perception, readability, sizing, or usability claims. Verify the whole artifact's reading order, responsive behavior, states, and handoffs at the evidence layer the claim requires.
 8. Report one representation decision and a prioritized cross-domain review.
 
 ## Core Principles
@@ -52,6 +53,7 @@ This skill owns representation-level orchestration, cross-domain conflicts, revi
 8. **Preserve the visual system when defensible.** Do not replace libraries, notation, or style merely because another implementation is preferred.
 9. **Separate observed from inferred.** Rendered behavior, source semantics, data validity, and accessibility require different evidence.
 10. **Allow `Clear`.** A holistic review does not need a finding from every domain.
+11. **Name the evidence class.** Separate standards conformance, empirical research, representative-user results, heuristics, and project conventions; never present one as another.
 
 ## Common Mistakes
 
